@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <button class="menu-icon">
+      <div class="icon-wrapper">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+      </div>
+    </button>
+    <section class="landing" id="landing">
+      <div class="title">
+        <h1 class="brew">Brew </h1>
+        <h1 class="ha">HAHA Haven</h1>
+      </div>
+      <p>Welcome to Brew HAHA Haven – your go-to for coffee bliss! Explore free tutorials, unlock the secrets of perfect
+        brews, and savor a world of coffee delights. Join us on a journey of flavor, from classic to creative. Your
+        daily dose of coffee joy starts here! ☕✨</p>
+      <button class="learn-more" onclick="smoothScrollToSection('coffee')">
+        <a href="#home"></a>
+        <span aria-hidden="true" class="circle">
+          <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">Learn More</span>
+      </button>
+      <button class="btn" onclick="scrollToHome()">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+          <path
+            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+          </path>
+        </svg>
+      </button>
+    </section>
+    <section class="home" id="coffee">
+      <nav>
+
+        <ul>
+
+          <div class="logo-container">
+            <img class="logs" src="ah.png" alt="logo">
+          </div>
+
+          <li><a href="#landing">Home</a></li>
+          <li><a href="#coffee">Coffee</a></li>
+          <li><a href="#section2" class="secti" onclick="scrollToSection('section2')">About</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="quizeLandingPage.html" onclick="navigateToQuizzes()">Quizzes</a></li>
+    
+          <div class="containerr">
+            <input checked="" class="checkbox" type="checkbox">
+            <div class="mainbox">
+              <div class="iconContainer">
+                <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
+                  <path
+                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                  </path>
+                </svg>
+              </div>
+              <input class="search_input" placeholder="Search" type="text" oninput="performSearch(this.value)">
+            </div>
+            <li class="suggestions"></li>
+          </div>
+        </ul>
+      </nav>
+      <section class="content">
+        <div class="coffee-item espresso"
+          onclick="changeBackground('Espresso','espresso.jpg',  'A strong and concentrated coffee made by forcing hot water through finely-ground coffee beans.')">
+          <img src="espresso.jpg" alt="Espresso Image">
+        </div>
+        <div class="coffee-item americano"
+          onclick="changeBackground('Americano','Americano.jpg',  'A diluted espresso made by adding hot water to a shot of espresso, resulting in a milder flavor.')">
+          <img src="Americano.jpg" alt="Americano Image">
+        </div>
+        <div class="coffee-item latte"
+          onclick="changeBackground('Latte','Latte.jpg',  'A coffee drink made with espresso and steamed milk, often topped with a small amount of foam.')">
+          <img src="Latte.jpg" alt="Latte Image">
+        </div>
+        <div class="coffee-item cappuccino"
+          onclick="changeBackground('Cappuccino','Cappuccino.jpg',  'A coffee drink that combines espresso, steamed milk, and foam.')">
+          <img src="Cappuccino.jpg" alt="Cappuccino Image">
+        </div>
+        <div class="coffee-item mocha"
+          onclick="changeBackground('Mocha','Mocha.jpg',  'A chocolate-flavored coffee drink with espresso, steamed milk, and whipped cream.')">
+          <img src="Mocha.jpg" alt="Mocha Image">
+        </div>
+        <div class="coffee-item macchiato"
+          onclick="changeBackground('Macchiato','Macchiato.jpg', 'An espresso with a small amount of frothy milk on top.')">
+          <img src="Macchiato.jpg" alt="Macchiato Image">
+        </div>
+        <div class="coffee-item affogato"
+          onclick="changeBackground('Affogato','Affogato.jpg',  'A dessert coffee made by pouring espresso over a scoop of ice cream.')">
+          <img src="Affogato.jpg" alt="Affogato Image">
+        </div>
+        <div class="coffee-item flat-white"
+          onclick="changeBackground( 'Flat White','FlatWhite.jpg', 'Similar to a latte but with a higher proportion of coffee to milk.')">
+          <img src="FlatWhite.jpg" alt="Flat White Image">
+        </div>
+        <div class="coffee-item cortado"
+          onclick="changeBackground('Cortado', 'Cortado.jpg', 'An espresso with a small amount of warm milk to reduce its acidity.')">
+          <img src="Cortado.jpg" alt="Cortado Image">
+        </div>
+        <div class="coffee-item iced-coffee"
+          onclick="changeBackground('Iced Coffee','IcedCoffee.jpg',  'Chilled coffee served over ice, often sweetened and/or with milk.')">
+          <img src="IcedCoffee.jpg" alt="Iced Coffee Image">
+        </div>
+        <div class="coffee-item ristretto"
+          onclick="changeBackground('Ristretto', 'Ristretto.jpg', 'A very short and strong espresso shot.')">
+          <img src="Ristretto.jpg" alt="Ristretto Image">
+        </div>
+
+      </section>
+      <div id="tutorialModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="tutorialTitle"></h2>
+        <div id="tutorialHistory"></div>
+        <div id="tutorialSteps"></div>
+        <button id="watch" onclick="watchTutorial()">Watch</button>
+      </div>
+      <div id="leftContent">
+        <h2 id="coffeeName"></h2>
+        <p id="coffeeDescription"></p>
+        <div class="icons">
+          <button id="learnmore" onclick="learnMore()">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section2" id="section2">
+      <div class="ab">
+        <h1 class="aba">About Us</h1>
+      </div>
+      <div class="about">
+        <div class="content-container">
+          <h1 class="h1">About BrewHAHA Haven</h1>
+          <img src="cup.png" alt="Coffee Cup Image" class="section-image">
+          <p>Welcome to BrewHAHA Haven, where the love for coffee meets the joy of discovery! We're more than just a
+            coffee website; we're your go-to destination for everything coffee-related, crafted with passion and a touch
+            of whimsy.</p>
+        </div>
+      </div>
+
+      <div class="passion">
+        <div class="content-container">
+          <h1 class="h1">Our Passion for Coffee</h1>
+          <img src="coffee.png" alt="Coffee Bean Image" class="section-image">
+          <p>At BrewHAHA Haven, we understand the magical power of coffee—the aroma that awakens your senses, the rich
+            flavors that dance on your palate, and the warmth that accompanies every sip. Our journey began with a
+            simple love for the bean, and it has evolved into a celebration of the diverse and enchanting world of
+            coffee.</p>
+        </div>
+      </div>
+
+      <div class="community">
+        <div class="content-container">
+          <h1 class="h1">Coffee Trivia Quiz</h1>
+    <img src="trivia.png" alt="Coffee Trivia Quiz Image" class="section-image">
+    <p>Explore the world of coffee with our engaging Coffee Trivia Quiz at BrewHAHA Haven. Join us for a delightful quiz
+        experience, challenge your coffee knowledge, and have fun discovering interesting facts. From testing your
+        expertise to sharing quiz results, our platform is where coffee enthusiasts gather for a trivia-filled
+        adventure.</p>
+        </div>
+      </div>
+      <div class="your">
+        <div class="content-container">
+          <h1 class="h1">Your Brew, Your Way</h1>
+          <img src="brew.png" alt="Coffee Community Image" class="section-image">
+          <p>Discover the art of brewing with our comprehensive guides and tutorials. Whether you prefer a classic
+            French press, pour-over perfection, or the convenience of a pod machine, we're here to empower you to brew
+            the perfect cup of coffee tailored to your taste..</p>
+        </div>
+    </section>
+  </div>
+
+  <section class="contacts" id="contacts">
+    <div class="cons">
+      <div class="contact-section">
+        <h1 class="contact-us">Contact Us</h1>
+      <img src="coffee.png" alt="Your Name" class="contact-image">
+        <div class="contact-info">
+          <span><i class="far fa-envelope"></i>jedramos246@gmail.com</span>
+        </div>
+        <div class="contact-info">
+          <span><i class="fas fa-phone"></i>09774515837</span>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h1>Get in Touch</h1>
+        <form action="#" method="post">
+          <div class="inputs">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <div class="rating">
+              <p>Rate Our Website:</p>
+              <div class="stars">
+                <input value="5" name="rate" id="star5" type="radio">
+                <label title="text" for="star5"></label>
+                <input value="4" name="rate" id="star4" type="radio">
+                <label title="text" for="star4"></label>
+                <input value="3" name="rate" id="star3" type="radio" checked="">
+                <label title="text" for="star3"></label>
+                <input value="2" name="rate" id="star2" type="radio">
+                <label title="text" for="star2"></label>
+                <input value="1" name="rate" id="star1" type="radio">
+                <label title="text" for="star1"></label>
+              </div>
+            </div>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button class="sub" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="follow-us">
+      <h2>Follow Us</h2>
+      <hr>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/jed.ramos.902" target="_blank" class="social-icon">
+        <img src="facebook.png" alt="Facebook Logo">
+      </a>
+      <a href="https://www.instagram.com/ice_jedii/?hl=en" target="_blank" class="social-icon">
+        <img src="insta.png" alt="Instagram Logo">
+      </a>
+      <a href="https://www.tiktok.com/@jedii2" target="_blank" class="social-icon">
+        <img src="tiktok.png" alt="TikTok Logo">
+      </a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

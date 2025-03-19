@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-xr7mgFxHQyB5auTiiQFihxr4LvIz3B4sI3J4/bmzYa6oiH3e6boet8/SLZPQO9S7w6qRqro1o1bk0HrNJfFXZg=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="quize.css" />
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-progress">
+            Progress: 0%
+            <div id="progress-bar"></div>
+        </div>
+        <div id="question-container">
+            <h2 id="question"></h2>
+            <div id="options-container"></div>
+            <button id="next-btn" onclick="checkAnswer()">Next</button>
+        </div>
+        <div id="result-container">
+            <i id="result-icon" class="fas fa-coffee"></i>
+            <h2 id="result-text">Your Score: <span id="score">0</span>/5</h2>
+            <p id="result-message"></p>
+            <button id="try-again-btn" onclick="resetQuiz()">Try Again</button>
+        </div>
+    </div>
+    <button id="logout-btn" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i> Log Out
+    </button>
+    <script src="quize.js"></script>
+</body>
+</html>

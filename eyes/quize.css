@@ -1,0 +1,125 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:black;
+    transition: background-color 0.5s;
+}
+
+.quiz-container {
+    background-color: #f8f1e7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s;
+    text-align: center;
+    position: relative;
+}
+
+#quiz-progress {
+    margin-bottom: 20px;
+    color: #4b3832;
+    font-size: 18px;
+    position: relative;
+}
+
+#progress-bar {
+    background-color: #d9c4b1;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 0;
+    transition: width 0.5s;
+}
+
+#question {
+    margin-bottom: 20px;
+    color: #4b3832;
+    font-size: 24px;
+    padding: 20px;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #a06c56;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button.selected {
+    background-color: #8e5741;
+}
+
+button:hover {
+    background-color: #c3866a;
+    transform: scale(1.05);
+}
+
+#result-container {
+    display: none;
+    margin-top: 50px;
+    color: #4b3832;
+    background-color: #f0fff0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+#result-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #8e5741;
+}
+
+#result-text {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#try-again-btn {
+    background-color: #b85b49;
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#try-again-btn:hover {
+    background-color: #943e32;
+}
+
+#logout-btn {
+    background-color: #b3a176;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#logout-btn:hover {
+    background-color: #998b63;
+}

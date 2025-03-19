@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Jed Ramos | Student Developer Portfolio</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="img/mylogo.png"
+    />
+    `
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      :root {
+        --pink: #ff2e93;
+        --light-pink: #ff80bb;
+        --black: #111111;
+        --dark-gray: #222222;
+      }
+
+      body {
+        background-color: var(--black);
+        color: white;
+        font-family: Poppins, Arial, sans-serif;
+      }
+
+      .gradient-text {
+        background: linear-gradient(90deg, var(--pink), var(--light-pink));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .pink-text {
+        color: var(--pink);
+      }
+
+      .card {
+        background: rgba(17, 17, 17, 0.7);
+        border: 1px solid var(--pink);
+        transition: all 0.3s;
+        border-radius: 10px;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(255, 46, 147, 0.3);
+      }
+
+      .tech-tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        background: rgba(255, 46, 147, 0.15);
+        color: var(--light-pink);
+        margin-bottom: 8px;
+        border: 1px solid rgba(255, 46, 147, 0.3);
+      }
+
+      .float {
+        animation: floating 3s infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .navbar {
+        background-color: rgba(17, 17, 17, 0.8);
+        backdrop-filter: blur(10px);
+      }
+
+      .icon-circle {
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 46, 147, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        color: var(--pink);
+        transition: all 0.3s;
+      }
+
+      .skill:hover .icon-circle {
+        background: var(--pink);
+        color: white;
+      }
+
+      .button {
+        background: linear-gradient(90deg, var(--pink), var(--light-pink));
+        border: none;
+        color: white;
+        padding: 8px 24px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+
+      .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(255, 46, 147, 0.3);
+      }
+
+      .blob {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(90deg, var(--pink), var(--light-pink));
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.1;
+        z-index: -1;
+      }
+
+      .section-header {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+      }
+
+      .section-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--pink) 0%, transparent 100%);
+      }
+
+      .profile-image {
+        border-radius: 50%;
+        border: 4px solid rgba(255, 20, 147, 0.5);
+        box-shadow: 0 0 25px rgba(255, 20, 147, 0.5);
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .tech-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        background: rgba(255, 46, 147, 0.1);
+        color: var(--light-pink);
+        border: 1px solid rgba(255, 46, 147, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .tech-badge:hover {
+        background: rgba(255, 46, 147, 0.2);
+        border-color: rgba(255, 46, 147, 0.3);
+      }
+
+      .view-project-link {
+        position: relative;
+        display: inline-block;
+        padding: 8px 0;
+        color: var(--pink);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .view-project-link:hover {
+        color: var(--light-pink);
+        transform: translateX(8px);
+      }
+
+      .view-project-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--pink), var(--light-pink));
+        transition: width 0.3s ease;
+      }
+
+      .view-project-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--pink), var(--light-pink));
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      section:target {
+        scroll-margin-top: 80px;
+      }
+
+      #home:target ~ * .nav-link[href="#home"],
+      #about:target ~ * .nav-link[href="#about"],
+      #skills:target ~ * .nav-link[href="#skills"],
+      #projects:target ~ * .nav-link[href="#projects"],
+      #contact:target ~ * .nav-link[href="#contact"] {
+        color: var(--pink) !important;
+      }
+
+      #home:target ~ * .nav-link[href="#home"]::after,
+      #about:target ~ * .nav-link[href="#about"]::after,
+      #skills:target ~ * .nav-link[href="#skills"]::after,
+      #projects:target ~ * .nav-link[href="#projects"]::after,
+      #contact:target ~ * .nav-link[href="#contact"]::after {
+        width: 100%;
+      }
+
+      html:has(#home:target) .nav-link[href="#home"],
+      html:has(#about:target) .nav-link[href="#about"],
+      html:has(#skills:target) .nav-link[href="#skills"],
+      html:has(#projects:target) .nav-link[href="#projects"],
+      html:has(#contact:target) .nav-link[href="#contact"] {
+        color: var(--pink) !important;
+      }
+
+      html:has(#home:target) .nav-link[href="#home"]::after,
+      html:has(#about:target) .nav-link[href="#about"]::after,
+      html:has(#skills:target) .nav-link[href="#skills"]::after,
+      html:has(#projects:target) .nav-link[href="#projects"]::after,
+      html:has(#contact:target) .nav-link[href="#contact"]::after {
+        width: 100%;
+      }
+
+      .profile-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .profile-tooltip {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(17, 17, 17, 0.9);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 18px;
+        font-size: 0.9rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(255, 46, 147, 0.2);
+        border: 1px solid var(--pink);
+        backdrop-filter: blur(10px);
+      }
+
+      .profile-tooltip::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid var(--pink);
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+      }
+
+      .profile-container:hover .profile-tooltip {
+        opacity: 1;
+        visibility: visible;
+        top: -10px;
+        animation: messagePopup 0.3s ease-out;
+      }
+
+      @keyframes messagePopup {
+        0% {
+          transform: translateX(-50%) scale(0.9);
+        }
+        50% {
+          transform: translateX(-50%) scale(1.05);
+        }
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      .fade-in.delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .fade-in.delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .fade-in.delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      /* Modern Loading Animation Styles */
+      .loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.8s, visibility 0.8s;
+      }
+
+      .loader-wrapper.fade-out {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .creative-loader {
+        position: relative;
+        width: 200px;
+        height: 200px;
+      }
+
+      .loader-circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 46, 147, 0.1);
+        border-top: 2px solid var(--pink);
+        animation: spin 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        box-shadow: 0 0 20px rgba(255, 46, 147, 0.1);
+      }
+
+      .loader-circle:nth-child(2) {
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+        border-left: 2px solid var(--light-pink);
+        border-top: 2px solid transparent;
+        animation: spin 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite reverse;
+      }
+
+      .loader-circle:nth-child(3) {
+        width: 60%;
+        height: 60%;
+        top: 20%;
+        left: 20%;
+        border-bottom: 2px solid var(--pink);
+        border-top: 2px solid transparent;
+        animation: spin 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+      }
+
+      .loader-logo {
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        top: 30%;
+        left: 30%;
+        background: url('img/mylogo.png') center/contain no-repeat;
+        animation: pulse 2s ease-in-out infinite;
+        filter: drop-shadow(0 0 10px rgba(255, 46, 147, 0.3));
+      }
+
+      .loader-text {
+        position: absolute;
+        width: 300px;
+        text-align: center;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .loader-text span {
+        display: inline-block;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: transparent;
+        background: linear-gradient(90deg, var(--pink), var(--light-pink));
+        -webkit-background-clip: text;
+        background-clip: text;
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+        animation: fadeInUpScale 0.5s ease forwards, glow 1s ease-in-out infinite;
+        text-shadow: 0 0 20px rgba(255, 46, 147, 0.5);
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.1); opacity: 1; }
+      }
+
+      @keyframes fadeInUpScale {
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes glow {
+        0%, 100% { text-shadow: 0 0 10px rgba(255, 46, 147, 0.7); }
+        50% { text-shadow: 0 0 20px rgba(255, 46, 147, 1); }
+      }
+
+      .progress-bar {
+        position: absolute;
+        bottom: -85px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 3px;
+        background: rgba(255, 46, 147, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(255, 46, 147, 0.2);
+      }
+
+      .progress {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, var(--pink), var(--light-pink));
+        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 0 15px var(--pink);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add this right after opening body tag -->
+    <div class="loader-wrapper">
+      <div class="creative-loader">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+        <div class="loader-logo"></div>
+        <div class="loader-text"></div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar fixed-top py-3">
+      <div class="container-fluid flex items-center justify-between">
+        <a
+          class="navbar-brand flex items-center space-x-4"
+          href="#"
+        >
+          <img
+            src="img/mylogo.png"
+            height="50px"
+            width="50px"
+            alt="Logo"
+          />
+          <div class="text-2xl font-bold gradient-text">EyesWater</div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbar"
+        >
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link mx-2"
+                href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link mx-2"
+                href="#about"
+                >About Me</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link mx-2"
+                href="#skills"
+                >My Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link mx-2"
+                href="#projects"
+                >Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link mx-2"
+                href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center relative pt-20"
+    >
+      <div
+        class="blob"
+        style="top: 20%; left: 10%"
+      ></div>
+      <div
+        class="blob"
+        style="bottom: 10%; right: 5%"
+      ></div>
+
+      <div class="container mx-auto px-4 py-20">
+        <div class="row align-items-center">
+          <div class="col-lg-6 fade-in active">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+              Hi, I'm <span class="gradient-text">Jed Ramos</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8">
+              UX/UI Designer & Full Stack Web Developer
+            </p>
+            <p class="text-gray-400 mb-8">
+              Student & Aspiring Developer. I create awesome websites and
+              designs!
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-8">
+              <div
+                class="w-12 h-12 flex items-center justify-center glass-card rounded-full hover:scale-110 transition-transform hover:border-pink-500 hover:border"
+                style="background: rgba(255, 255, 255, 0.05)"
+              >
+                <img
+                  src="img/html.png"
+                  alt="HTML5"
+                  class="w-7 h-7"
+                />
+              </div>
+              <div
+                class="w-12 h-12 flex items-center justify-center glass-card rounded-full hover:scale-110 transition-transform hover:border-pink-500 hover:border"
+                style="background: rgba(255, 255, 255, 0.05)"
+              >
+                <img
+                  src="img/css.png"
+                  alt="CSS3"
+                  class="w-7 h-7"
+                />
+              </div>
+              <div
+                class="w-12 h-12 flex items-center justify-center glass-card rounded-full hover:scale-110 transition-transform hover:border-pink-500 hover:border"
+                style="background: rgba(255, 255, 255, 0.05)"
+              >
+                <img
+                  src="img/figma.png"
+                  alt="Figma"
+                  class="w-7 h-7"
+                />
+              </div>
+              <div
+                class="w-12 h-12 flex items-center justify-center glass-card rounded-full hover:scale-110 transition-transform hover:border-pink-500 hover:border"
+                style="background: rgba(255, 255, 255, 0.05)"
+              >
+                <img
+                  src="img/photo.png"
+                  alt="Adobe"
+                  class="w-7 h-7"
+                />
+              </div>
+              <div
+                class="w-12 h-12 flex items-center justify-center glass-card rounded-full hover:scale-110 transition-transform hover:border-pink-500 hover:border"
+                style="background: rgba(255, 255, 255, 0.05)"
+              >
+                <img
+                  src="img/al.png"
+                  alt="Tailwind CSS"
+                  class="w-7 h-7"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-8">
+              <a
+                class="button text-decoration-none"
+                href="#projects"
+                >See My Work</a
+              >
+              <a
+                href="#contact"
+                class="border text-decoration-none border-pink-500 text-white hover:bg-pink-500 hover:text-white px-6 py-2 rounded-full transition duration-300"
+              >
+                Contact Me
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center fade-in active">
+            <div class="profile-container">
+              <img
+                src="img/profile.png"
+                alt="Jed Ramos"
+                class="profile-image float max-w-full h-auto mx-auto"
+              />
+              <span class="profile-tooltip">Hello there! 👋</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="py-20 relative"
+    >
+      <div
+        class="blob"
+        style="top: 30%; right: 10%"
+      ></div>
+
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 section-header">
+          About <span class="gradient-text">Me</span>
+        </h2>
+
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-8 md:mb-0 text-center fade-in active">
+            <img
+              src="img/abs.png"
+              alt="About Me"
+              class="rounded-xl shadow-2xl max-w-full h-auto mx-auto"
+            />
+          </div>
+          <div class="col-lg-7 fade-in active">
+            <h3 class="text-2xl font-bold mb-4">
+              <span class="pink-text">UX/UI Designer</span> & Full Stack
+              Developer
+            </h3>
+            <p class="text-gray-300 mb-6">
+              Hi! I'm Jed Ramos, a passionate student developer specializing in
+              UX/UI design and full stack web development. I love creating
+              beautiful and functional digital experiences!
+            </p>
+            <p class="text-gray-300 mb-6">
+              I'm currently pursuing my degree in Information System with a
+              focus on web technologies. I enjoy working on both the front-end
+              (creating great user experiences) and back-end (making everything
+              work smoothly behind the scenes).
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="flex items-center">
+                <i class="fas fa-envelope pink-text mr-2"></i>
+                <span>jedramos246@gmail.com</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-phone pink-text mr-2"></i>
+                <span>09774515837</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt pink-text mr-2"></i>
+                <span>Moises Padilla Negros Occidental, Philippines</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-graduation-cap pink-text mr-2"></i>
+                <span>Information System Student</span>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <a
+                class="button text-decoration-none"
+                href="img/csv.jpg"
+                >Download My Resume <i class="fas fa-download ml-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section
+      id="skills"
+      class="py-20 bg-gray-900"
+    >
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 section-header">
+          My <span class="gradient-text">Skills</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="card p-6 rounded-lg fade-in active skill flex flex-col">
+            <div class="flex-grow">
+              <div class="flex items-center mb-4">
+                <div class="icon-circle">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Frontend Development</h3>
+              </div>
+              <p class="text-gray-400 mb-4">
+                I build responsive and beautiful user interfaces with modern web
+                technologies.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-auto">
+              <span class="text-sm text-pink-400 min-w-[60px]">Beginner</span>
+              <div class="flex-1 bg-gray-800 h-2 rounded-full overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-pink-500 to-pink-400 h-full rounded-full transition-all duration-1000"
+                  style="width: 50%"
+                ></div>
+              </div>
+              <span class="text-sm text-pink-400 min-w-[40px] text-right"
+                >50%</span
+              >
+            </div>
+            <div class="flex gap-1 mt-2 ml-[76px]">
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          </div>
+
+          <div class="card p-6 rounded-lg fade-in active skill flex flex-col">
+            <div class="flex-grow">
+              <div class="flex items-center mb-4">
+                <div class="icon-circle">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Backend Development</h3>
+              </div>
+              <p class="text-gray-400 mb-4">
+                I create server-side applications and APIs that power websites.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-auto">
+              <span class="text-sm text-pink-400 min-w-[60px]">Learning</span>
+              <div class="flex-1 bg-gray-800 h-2 rounded-full overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-pink-500 to-pink-400 h-full rounded-full transition-all duration-1000"
+                  style="width: 35%"
+                ></div>
+              </div>
+              <span class="text-sm text-pink-400 min-w-[40px] text-right"
+                >35%</span
+              >
+            </div>
+            <div class="flex gap-1 mt-2 ml-[76px]">
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          </div>
+
+          <div class="card p-6 rounded-lg fade-in active skill flex flex-col">
+            <div class="flex-grow">
+              <div class="flex items-center mb-4">
+                <div class="icon-circle">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="text-xl font-semibold">UI/UX Design</h3>
+              </div>
+              <p class="text-gray-400 mb-4">
+                I design user interfaces that are both beautiful and functional.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Wireframing</span>
+                <span class="tech-tag">Prototyping</span>
+                <span class="tech-tag">User Research</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-auto">
+              <span class="text-sm text-pink-400 min-w-[60px]">Beginner</span>
+              <div class="flex-1 bg-gray-800 h-2 rounded-full overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-pink-500 to-pink-400 h-full rounded-full transition-all duration-1000"
+                  style="width: 50%"
+                ></div>
+              </div>
+              <span class="text-sm text-pink-400 min-w-[40px] text-right"
+                >50%</span
+              >
+            </div>
+            <div class="flex gap-1 mt-2 ml-[76px]">
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          </div>
+
+          <div class="card p-6 rounded-lg fade-in active skill flex flex-col">
+            <div class="flex-grow">
+              <div class="flex items-center mb-4">
+                <div class="icon-circle">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Responsive Design</h3>
+              </div>
+              <p class="text-gray-400 mb-4">
+                I make websites look great on all devices from phones to
+                desktops.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag">Mobile First</span>
+                <span class="tech-tag">CSS Grid</span>
+                <span class="tech-tag">Flexbox</span>
+                <span class="tech-tag">Media Queries</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-auto">
+              <span class="text-sm text-pink-400 min-w-[60px]">Learning</span>
+              <div class="flex-1 bg-gray-800 h-2 rounded-full overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-pink-500 to-pink-400 h-full rounded-full transition-all duration-1000"
+                  style="width: 30%"
+                ></div>
+              </div>
+              <span class="text-sm text-pink-400 min-w-[40px] text-right"
+                >30%</span
+              >
+            </div>
+            <div class="flex gap-1 mt-2 ml-[76px]">
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          </div>
+
+          <div class="card p-6 rounded-lg fade-in active skill flex flex-col">
+            <div class="flex-grow">
+              <div class="flex items-center mb-4">
+                <div class="icon-circle">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Development Tools</h3>
+              </div>
+              <p class="text-gray-400 mb-4">
+                I use modern development tools to streamline my workflow.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">GitHub</span>
+                <span class="tech-tag">VS Code</span>
+                <span class="tech-tag">npm</span>
+                <span class="tech-tag">Netlify</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-auto">
+              <span class="text-sm text-pink-400 min-w-[60px]">Learning</span>
+              <div class="flex-1 bg-gray-800 h-2 rounded-full overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-pink-500 to-pink-400 h-full rounded-full transition-all duration-1000"
+                  style="width: 35%"
+                ></div>
+              </div>
+              <span class="text-sm text-pink-400 min-w-[40px] text-right"
+                >35%</span
+              >
+            </div>
+            <div class="flex gap-1 mt-2 ml-[76px]">
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          </div>
+
+          <!-- Graphic Design -->
+          <div class="card p-6 rounded-lg fade-in active skill flex flex-col">
+            <div class="flex-grow">
+              <div class="flex items-center mb-4">
+                <div class="icon-circle">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Graphic Design</h3>
+              </div>
+              <p class="text-gray-400 mb-4">
+                I create visually appealing designs and digital artwork using
+                industry-standard tools.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag">Adobe Photoshop</span>
+                <span class="tech-tag">Illustrator</span>
+                <span class="tech-tag">Canva</span>
+                <span class="tech-tag">Digital Art</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-auto">
+              <span class="text-sm text-pink-400 min-w-[60px]">Beginner</span>
+              <div class="flex-1 bg-gray-800 h-2 rounded-full overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-pink-500 to-pink-400 h-full rounded-full transition-all duration-1000"
+                  style="width: 45%"
+                ></div>
+              </div>
+              <span class="text-sm text-pink-400 min-w-[40px] text-right"
+                >45%</span
+              >
+            </div>
+            <div class="flex gap-1 mt-2 ml-[76px]">
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="py-32 relative"
+    >
+      <div
+        class="custom-shape"
+        style="top: 20%; right: -10%"
+      ></div>
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16 section-header">
+          My <span class="gradient-text">Projects</span>
+        </h2>
+
+        <h3 class="text-3xl font-semibold text-center mb-12">
+          Development Projects
+        </h3>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+          <div class="md:w-1/2 relative">
+            <img
+              src="img/war.jpeg"
+              alt="Weekly Accomplishment Report"
+              class="w-full rounded-lg shadow-2xl"
+            />
+            <div
+              class="absolute top-4 right-4 bg-pink-600 text-white py-1 px-3 text-xs uppercase font-bold"
+            >
+              Featured
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">
+              Weekly Accomplishment Report
+            </h3>
+            <p class="text-gray-400 mb-6">
+              A full-stack WAR solution with real-time monitoring of OJT tasks.
+              This system streamlines the process of submitting and tracking
+              weekly accomplishment reports, featuring automated notifications,
+              progress tracking, and comprehensive analytics for both students
+              and supervisors.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">HTML / Tailwind</span>
+              <span class="tech-badge">PHP</span>
+
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <a
+              href="https://war.bccbsis.com/war/signup.php"
+              class="view-project-link"
+              >View Project →</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24"
+        >
+          <div class="md:w-1/2">
+            <img
+              src="img/caps.jpg"
+              alt="Smart Gate Dashboard"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Smart Gate Dashboard</h3>
+            <p class="text-gray-400 mb-6">
+              Data visualization of student entry with interactive analytics.
+              This dashboard provides real-time monitoring of student
+              attendance, featuring customizable reports, trend analysis, and
+              automated attendance tracking. The system helps school
+              administrators make data-driven decisions.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">HTML / Tailwind</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <a
+              href="img/caps.jpg"
+              class="view-project-link"
+              >View Project →</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+          <div class="md:w-1/2">
+            <img
+              src="img/coffee.png"
+              alt="Coffee Web Site"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Static Coffee Website</h3>
+            <p class="text-gray-400 mb-6">
+              An elegant website for Coffee Lovers with responsive design. This
+              platform showcases various coffee blends, brewing methods, and
+              coffee-related content. Features include an interactive menu,
+              coffee brewing guides, and a blog section sharing coffee culture
+              and tips.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">HTML / CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <a
+              href="eyes/index.html"
+              class="view-project-link"
+              >View Project →</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+          <div class="md:w-1/2">
+            <img
+              src="img/app.png"
+              alt="Music App"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Music App</h3>
+            <p class="text-gray-400 mb-6">
+              Interactive music player application with playlist management.
+              Users can create custom playlists, discover new music through
+              personalized recommendations, and enjoy features like shuffle
+              play, repeat modes, and social sharing capabilities.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">HTML / CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <a
+              href="img/app.png"
+              class="view-project-link"
+              >View Project →</a
+            >
+          </div>
+        </div>
+
+        <!-- Design Projects -->
+        <h3 class="text-3xl font-semibold text-center mt-24 mb-12">
+          Design Projects
+        </h3>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+          <div class="md:w-1/2 relative">
+            <img
+              src="img/port.png"
+              alt="Portfolio UI/UX Design"
+              class="w-full rounded-lg shadow-2xl"
+            />
+            <div
+              class="absolute top-4 right-4 bg-pink-600 text-white py-1 px-3 text-xs uppercase font-bold"
+            >
+              Featured
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Portfolio UI/UX Design</h3>
+            <p class="text-gray-400 mb-6">
+              A modern UI design for a personal portfolio using Figma. The
+              design focuses on user experience with smooth animations,
+              intuitive navigation, and a clean layout that effectively
+              showcases projects and skills. Includes responsive design
+              considerations for all device sizes.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Figma</span>
+              <span class="tech-badge">Prototyping</span>
+            </div>
+            <a
+              href="img/port.png"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24"
+        >
+          <div class="md:w-1/2">
+            <img
+              src="img/desk.png"
+              alt="Web UI/UX Design"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Web UI/UX Design</h3>
+            <p class="text-gray-400 mb-6">
+              A clean and intuitive interface design for web applications. This
+              design system includes comprehensive component libraries,
+              consistent styling guidelines, and interactive prototypes that
+              demonstrate user flows and interactions across different
+              scenarios.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Figma</span>
+              <span class="tech-badge">Prototyping</span>
+            </div>
+            <a
+              href="img/desk.png"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+          <div class="md:w-1/2">
+            <img
+              src="img/canva.jpg"
+              alt="Canva Design"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Canva Poster Design</h3>
+            <p class="text-gray-400 mb-6">
+              An engaging promotional poster designed in Canva. This design
+              combines striking visuals with compelling typography to create
+              impactful marketing materials. The poster effectively communicates
+              key messages while maintaining visual hierarchy and brand
+              consistency.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Canva</span>
+              <span class="tech-badge">Graphic Design</span>
+            </div>
+            <a
+              href="img/canva.jpg"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+          <div class="md:w-1/2">
+            <img
+              src="img/ikaapat.jpg"
+              alt="Photoshop"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Photoshop Digital Art</h3>
+            <p class="text-gray-400 mb-6">
+              A creative digital artwork designed in Photoshop. This piece
+              combines multiple design elements and techniques to create a
+              unique visual experience. Features advanced photo manipulation,
+              custom brushwork, and careful attention to color theory and
+              composition.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Adobe Photoshop</span>
+              <span class="tech-badge">Photo Editing</span>
+            </div>
+            <a
+              href="img/ikaapat.jpg"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+        <!-- tshirt design -->
+        <h3 class="text-3xl font-semibold text-center mt-24 mb-12">
+          T-shirt Design Projects
+        </h3>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+          <div class="md:w-1/2 relative">
+            <img
+              src="img/tshirt1.png"
+              alt="Chess T-shirt Design"
+              class="w-full rounded-lg shadow-2xl"
+            />
+            <div
+              class="absolute top-4 right-4 bg-pink-600 text-white py-1 px-3 text-xs uppercase font-bold"
+            >
+              Featured
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Chess T-shirt Design</h3>
+            <p class="text-gray-400 mb-6">
+              Custom t-shirt design for chess enthusiasts. This design
+              incorporates classic chess elements with modern typography and
+              layout techniques. The artwork is optimized for various printing
+              methods and looks great on different shirt colors and styles.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Adobe Photoshop</span>
+              <span class="tech-badge">T-shirt Design</span>
+            </div>
+            <a
+              href="img/tshirt1.png"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24"
+        >
+          <div class="md:w-1/2">
+            <img
+              src="img/tshirt2.png"
+              alt="Chess T-shirt 2 Design"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Chess T-shirt 2 Design</h3>
+            <p class="text-gray-400 mb-6">
+              Alternative chess-themed t-shirt design. This variation explores a
+              different artistic approach to chess imagery, featuring abstract
+              interpretations of chess pieces and strategic gameplay elements.
+              The design appeals to both casual players and serious chess
+              enthusiasts.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Adobe Photoshop</span>
+              <span class="tech-badge">T-shirt Design</span>
+            </div>
+            <a
+              href="img/tshirt2.png"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+          <div class="md:w-1/2 relative">
+            <img
+              src="img/tshirt3.png"
+              alt="Chess T-shirt Design"
+              class="w-full rounded-lg shadow-2xl"
+            />
+            <div
+              class="absolute top-4 right-4 bg-pink-600 text-white py-1 px-3 text-xs uppercase font-bold"
+            >
+              Featured
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Tech Tshirt</h3>
+            <p class="text-gray-400 mb-6">
+              Show off your love for technology with this unique Tech T-shirt
+              design. Perfect for tech enthusiasts, coders, and anyone who
+              appreciates the art of innovation.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Adobe Photoshop</span>
+              <span class="tech-badge">T-shirt Design</span>
+            </div>
+            <a
+              href="img/tshirt3.png"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24"
+        >
+          <div class="md:w-1/2">
+            <img
+              src="img/tshirt4.png"
+              alt="Chess T-shirt 2 Design"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">
+              App Merchandise Jacket Design
+            </h3>
+            <p class="text-gray-400 mb-6">
+              Custom jacket design featuring my app's signature branding
+              elements. This premium merchandise combines urban streetwear
+              aesthetics with our app's visual identity, creating a stylish and
+              wearable piece that represents our digital brand in the physical
+              world.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="tech-badge">Adobe Photoshop</span>
+              <span class="tech-badge">Merchandise Design</span>
+              <span class="tech-badge">Apparel Design</span>
+            </div>
+            <a
+              href="img/tshirt4.png"
+              class="view-project-link"
+              >View Design →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-20 bg-gray-900 relative"
+    >
+      <div
+        class="blob"
+        style="top: 10%; left: 5%; opacity: 0.05"
+      ></div>
+      <div
+        class="blob"
+        style="bottom: 10%; right: 5%; opacity: 0.05"
+      ></div>
+
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 section-header">
+          Get in <span class="gradient-text">Touch</span>
+        </h2>
+
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="card p-8 backdrop-blur-lg bg-opacity-50 relative overflow-hidden"
+          >
+            <!-- Decorative elements -->
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-b from-pink-500 to-transparent opacity-10 transform rotate-45"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-t from-pink-500 to-transparent opacity-10 transform -rotate-45"
+            ></div>
+
+            <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+              <i class="fas fa-envelope text-pink-500"></i>
+              <span>Send Me a Message</span>
+              <div
+                class="h-px flex-grow bg-gradient-to-r from-pink-500 to-transparent ml-4"
+              ></div>
+            </h3>
+
+            <form class="space-y-6">
+              <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1 relative group">
+                  <label
+                    for="name"
+                    class="block text-gray-300 mb-2 font-medium"
+                  >
+                    <i class="fas fa-user text-pink-500 mr-2"></i>Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full bg-black rounded-lg border border-gray-700 p-3 text-white focus:border-pink-500 focus:outline-none transition-all duration-300 hover:border-gray-600 backdrop-blur-sm placeholder-gray-500"
+                    placeholder="John Doe"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-pink-500 to-pink-300 transition-all duration-300 group-hover:w-full"
+                  ></div>
+                </div>
+
+                <div class="flex-1 relative group">
+                  <label
+                    for="email"
+                    class="block text-gray-300 mb-2 font-medium"
+                  >
+                    <i class="fas fa-envelope text-pink-500 mr-2"></i>Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full bg-black rounded-lg border border-gray-700 p-3 text-white focus:border-pink-500 focus:outline-none transition-all duration-300 hover:border-gray-600 backdrop-blur-sm placeholder-gray-500"
+                    placeholder="john@example.com"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-pink-500 to-pink-300 transition-all duration-300 group-hover:w-full"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="relative group">
+                <label
+                  for="subject"
+                  class="block text-gray-300 mb-2 font-medium"
+                >
+                  <i class="fas fa-heading text-pink-500 mr-2"></i>Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full bg-black rounded-lg border border-gray-700 p-3 text-white focus:border-pink-500 focus:outline-none transition-all duration-300 hover:border-gray-600 backdrop-blur-sm placeholder-gray-500"
+                  placeholder="What's this about?"
+                />
+                <div
+                  class="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-pink-500 to-pink-300 transition-all duration-300 group-hover:w-full"
+                ></div>
+              </div>
+
+              <div class="relative group">
+                <label
+                  for="message"
+                  class="block text-gray-300 mb-2 font-medium"
+                >
+                  <i class="fas fa-comment text-pink-500 mr-2"></i>Your Message
+                </label>
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full bg-black rounded-lg border border-gray-700 p-3 text-white focus:border-pink-500 focus:outline-none transition-all duration-300 hover:border-gray-600 backdrop-blur-sm resize-none placeholder-gray-500"
+                  placeholder="Write your message here..."
+                ></textarea>
+                <div
+                  class="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-pink-500 to-pink-300 transition-all duration-300 group-hover:w-full"
+                ></div>
+              </div>
+
+              <div class="flex justify-end">
+                <button
+                  type="submit"
+                  class="button flex items-center justify-center gap-2 group hover:scale-105 transform transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700"
+                >
+                  <span>Send Message</span>
+                  <i
+                    class="fas fa-paper-plane transform group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="text-center mt-8 text-gray-400 text-sm">
+            <div class="inline-flex items-center justify-center gap-2">
+              <i class="fas fa-clock text-pink-500"></i>
+              <p class="m-0">I'll get back to you as soon as possible!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="py-16 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800"
+    >
+      <div class="container mx-auto px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 md:flex md:justify-between"
+        >
+          <div class="flex flex-col items-start space-y-4 max-w-sm">
+            <a
+              href="#"
+              class="flex items-center space-x-4 group no-underline"
+            >
+              <div class="relative overflow-hidden rounded-2xl">
+                <img
+                  src="img/mylogo.png"
+                  height="70"
+                  width="70"
+                  alt="Logo"
+                  class="transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <span class="text-3xl font-extrabold text-white tracking-wide"
+                >EyesWater</span
+              >
+            </a>
+            <p class="text-gray-400 leading-relaxed text-sm max-w-xs">
+              Transforming ideas into digital reality through innovative design
+              and development.
+            </p>
+            <div class="flex space-x-5">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300 text-xl no-underline"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300 text-xl no-underline"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300 text-xl no-underline"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300 text-xl no-underline"
+                ><i class="fab fa-discord"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <h3
+              class="text-lg font-semibold text-white mb-4 border-b border-gray-700 pb-2"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-pink-500 transition duration-300 no-underline"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-pink-500 transition duration-300 no-underline"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="text-gray-400 hover:text-pink-500 transition duration-300 no-underline"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="text-gray-400 hover:text-pink-500 transition duration-300 no-underline"
+                  >Projects</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col">
+            <h3
+              class="text-lg font-semibold text-white mb-4 border-b border-gray-700 pb-2"
+            >
+              Contact Info
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-envelope text-pink-500"></i>
+                <span class="text-gray-400">jedramos246@gmail.com</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-phone text-pink-500"></i>
+                <span class="text-gray-400">09774515837</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-map-marker-alt text-pink-500"></i>
+                <span class="text-gray-400"
+                  >Moises Padilla, Negros Occidental</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-center"
+        >
+          <p class="text-gray-400 text-sm">
+            &copy; 2025 <span class="text-white">Jed Ramos</span>. All rights
+            reserved.
+          </p>
+          <div class="flex items-center space-x-2">
+            <span class="text-gray-400 text-sm">Made with</span>
+            <i class="fas fa-heart text-pink-500 animate-pulse"></i>
+            <span class="text-gray-400 text-sm">by</span>
+            <div class="animate-text">
+              <span class="letter" style="--delay: 0s">J</span>
+              <span class="letter" style="--delay: 0.2s">E</span>
+              <span class="letter" style="--delay: 0.4s">D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const loaderText = document.querySelector('.loader-text');
+        const progress = document.querySelector('.progress');
+        const messages = [
+          '✨ Welcome to my portfolio',
+          '🎨 Crafting experiences',
+          '💫 Sprinkling some magic',
+          '🚀 Preparing for launch',
+          '🌟 Almost ready'
+        ];
+        let currentMessage = 0;
+        
+        function updateLoaderText() {
+          loaderText.innerHTML = '';
+          messages[currentMessage].split('').forEach((letter, i) => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            span.style.animationDelay = `${i * 0.03}s`;
+            if (letter === ' ') {
+              span.style.marginRight = '0.3em';
+            }
+            loaderText.appendChild(span);
+          });
+        }
+
+        function updateProgress() {
+          const increment = 100 / (messages.length - 1);
+          const currentProgress = currentMessage * increment;
+          progress.style.width = `${currentProgress}%`;
+        }
+
+        updateLoaderText();
+        updateProgress();
+
+        const messageInterval = setInterval(() => {
+          currentMessage++;
+          if (currentMessage >= messages.length) {
+            clearInterval(messageInterval);
+            progress.style.width = '100%';
+            
+            setTimeout(() => {
+              loaderText.innerHTML = '';
+              messages[messages.length - 1].split('').forEach((letter, i) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.style.animationDelay = `${i * 0.03}s`;
+                span.style.animation = 'fadeInUpScale 0.5s ease forwards, glow 1s ease-in-out infinite';
+                loaderText.appendChild(span);
+              });
+              
+              setTimeout(() => {
+                document.querySelector('.loader-wrapper').classList.add('fade-out');
+              }, 800);
+            }, 400);
+            return;
+          }
+          updateLoaderText();
+          updateProgress();
+        }, 1800);
+
+        window.addEventListener('load', () => {
+          if (currentMessage < messages.length - 1) {
+            clearInterval(messageInterval);
+            currentMessage = messages.length - 1;
+            updateLoaderText();
+            progress.style.width = '100%';
+            setTimeout(() => {
+              document.querySelector('.loader-wrapper').classList.add('fade-out');
+            }, 800);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
